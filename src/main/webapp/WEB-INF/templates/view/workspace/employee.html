@@ -1,13 +1,63 @@
 <!Doctype html>
 <html lang="ru" xmlns:th="http://thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
-    <meta name="viewport" content="width=content-width, initial-scale=1.0"/>
-    <title>Сотрудник</title>
-</head>
-<body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+        <meta name="viewport" content="width=content-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/employee_view.css"/>
+        <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+        <title>Employee's personal information</title>
+    </head>
+    <body>
+        <div th:replace="~{layouts/signedIn/header :: header}">header</div>
+        <aside th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</aside>
+            <section class="emp_info_block">
+                <section class="emp_info">
+                    <table>
+                        <tr>
+                            <th colspan="2">Employee info</th>
+                        </tr>
+                        <tr>
+                            <td>IIN:</td>
+                            <td th:text="${employee.getIin()}">iin</td>
+                        </tr>
+                        <tr>
+                            <td>First Name:</td>
+                            <td th:text="${employee.getFirstName()}">f_name</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td th:text="${employee.getLastName()}">l_name</td>
+                        </tr>
+                        <tr>
+                            <td>Surname:</td>
+                            <td th:text="${employee.getSurname()}">surname</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday</td>
+                            <td th:text="${employee.getBirthday()}">birthday</td>
+                        </tr>
+                        <tr>
+                            <td>Phone number:</td>
+                            <td th:text="${employee.getPhoneNumber()}">number</td>
+                        </tr>
+                        <tr>
+                            <td>Department:</td>
+                            <td th:text="${employee.getDepartment()}">department</td>
+                        </tr>
+                        <tr>
+                            <td>Salary:</td>
+                            <td th:text="${employee.getSalary()}"></td>
+                        </tr>
+                        <tr>
+                            <td>Recruitment date:</td>
+                            <td th:text="${employee.getRecruitmentDate()}">date</td>
+                        </tr>
+                    </table>
+                </section>
+                <img id="emp_img" src="/img/profile_icon.png" alt="photo"/>
+            </section>
 
-<p th:text="${employee.getName()}">Name</p>
-<p th:text="${employee.getId()}">Id</p>
-</body>
+    </body>
 </html>

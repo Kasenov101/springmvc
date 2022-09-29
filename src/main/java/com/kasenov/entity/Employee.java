@@ -21,7 +21,7 @@ public class Employee {
     @Column(name = "s_name")
     private String  surname;
     @Column(name = "birthday")
-    private LocalDate birthDay;
+    private LocalDate birthday;
     @Column(name = "phone_num")
     private String phoneNumber;
     @Column(name = "department")
@@ -34,13 +34,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee( String iin, String firstName, String lastName, String surname, LocalDate birthDay,
+    public Employee( String iin, String firstName, String lastName, String surname, LocalDate birthday,
                     String phoneNumber, String department, int salary, LocalDate recruitmentDate) {
         this.iin = iin;
         this.firstName = firstName;
         this.lastName = lastName;
         this.surname = surname;
-        this.birthDay = birthDay;
+        this.birthday = birthday;
         this.phoneNumber = phoneNumber;
         this.department = department;
         this.salary = salary;
@@ -87,12 +87,12 @@ public class Employee {
         this.surname = surname;
     }
 
-    public LocalDate getBirthDay() {
-        return birthDay;
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
-    public void setBirthDay(LocalDate birthDay) {
-        this.birthDay = birthDay;
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 
     public String getPhoneNumber() {

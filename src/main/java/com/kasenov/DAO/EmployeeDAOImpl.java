@@ -29,7 +29,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public Employee getEmployee(int id) {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        return session.createQuery("from Employee where id =" + id, Employee.class).getSingleResult();
     }
 
     @Override

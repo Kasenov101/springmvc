@@ -30,8 +30,9 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
+    @Transactional
     public Employee getEmployee(int id) {
-        return null;
+        return employeeDAO.getEmployee(id);
     }
 
     @Override

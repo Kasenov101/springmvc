@@ -1,6 +1,7 @@
 package com.kasenov.controllers;
 
 import com.kasenov.DAO.EmployeeDAOImpl;
+import com.kasenov.entity.Employee;
 import com.kasenov.services.EmployeeService;
 import com.kasenov.services.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class EmployeesController {
 
     @GetMapping("/employee/{id}")
     public String showEmployee(@PathVariable("id") int id, Model model){
-       // model.addAttribute("employee", employeeDAOImpl.getEmpForId(id));
+        model.addAttribute("employee", employeeService.getEmployee(id));
         return "/workspace/employee";
     }
 }
