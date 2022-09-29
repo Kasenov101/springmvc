@@ -1,6 +1,8 @@
 package com.kasenov.controllers;
 
 import com.kasenov.DAO.EmployeeDAOImpl;
+import com.kasenov.services.EmployeeService;
+import com.kasenov.services.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/workspace")
 public class EmployeesController {
 
-    private final EmployeeDAOImpl employeeDAOImpl;
+    private final EmployeeService employeeService;
 
     @Autowired
-    public EmployeesController(EmployeeDAOImpl employeeDAOImpl) {
-        this.employeeDAOImpl = employeeDAOImpl;
+    public EmployeesController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @GetMapping("/index")
@@ -26,7 +28,7 @@ public class EmployeesController {
 
     @GetMapping("/employees")
     public String getEmployees(Model model){
-       // model.addAttribute("employees", employeeDAOImpl.getAllEmployees());
+        model.addAttribute("employees", employeeService.getEmployees());
         return "/workspace/employees";
     }
 

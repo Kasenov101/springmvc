@@ -5,6 +5,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -36,6 +38,9 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public List<Employee> getEmployees() {
-        return null;
+        Session session = sessionFactory.getCurrentSession();
+        List<Employee> arrayList = new ArrayList<>();
+        arrayList = session.createQuery("from Employee", Employee.class).getResultList();
+        return arrayList;
     }
 }

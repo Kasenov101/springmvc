@@ -2,11 +2,24 @@
     height: 300px;
     float: left;
     padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 4px;
 }
 
-table {
-    border: 1px solid black;
+.all_emp_table {
+    border-collapse: collapse;
+    width: 977px;
+}
+tr:nth-child(even) {
+    background-color: rgba(125,125,125,0.08);
+}
+
+th, td {
+    text-align: left;
+}
+
+th {
+    background-color: rgba(133,186,195,25);
+    color: azure;
 }
 
 @media (max-width: 900px) {

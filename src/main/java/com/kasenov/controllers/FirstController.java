@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @Controller
 public class FirstController {
     EmployeeService employeeService;
-
     @Autowired
     public FirstController(EmployeeService employeeService) {
         this.employeeService = employeeService;
