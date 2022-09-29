@@ -1,0 +1,39 @@
+<!Doctype html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+        <title>HR Workspace</title>
+        <link rel="stylesheet" type="text/css" href="/css/aside_menu.css">
+        <link rel="stylesheet" type="text/css" href="/css/top_menu.css">
+        <link rel="stylesheet" type="text/css" href="/css/employee.css">
+        <link rel="icon" type="image/x-icon" href="/img/db_icon.png">
+    </head>
+    <body>
+        <div th:replace="~{layouts/signedIn/header :: header}">Header</div>
+        <aside th:replace="~{layouts/signedIn/aside_menu :: aside}">Aside menu</aside>
+        <p>Сотрудники</p>
+        <section class="all_emp_list">
+            <table class="all_emp_table">
+                <tr>
+                    <th>IIN</th>
+                    <th>First name</th>
+                    <th>Last n</th>
+                    <th>Surname</th>
+                    <th>Department</th>
+                    <th>Profile</th>
+                </tr>
+                    <tr th:each="employee : ${employees}">
+                        <td th:text="${employee.getIin()}">iin</td>
+                        <td th:text="${employee.getFirstName()}">first name</td>
+                        <td th:text="${employee.getLastName()}">last name</td>
+                        <td th:text="${employee.getSurname()}">surname</td>
+                        <td th:text="${employee.getDepartment()}">department</td>
+                        <td><a th:href="@{/workspace/employee/{id}(id=${employee.getId()})}">
+                            <img src="/img/profile_icon.png" style="width: 20px; height: 20px" alt="profile icon">
+                        </a></td>
+                    </tr>
+            </table>
+        </section>
+    </body>
+    </html>

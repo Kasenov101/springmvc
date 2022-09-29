@@ -1,0 +1,33 @@
+.aside_menu_links {
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    float: left;
+    border-right: azure;
+    padding: 17px 20px 0px 10px;
+    margin: 0px 0px 0px -8px;
+    background-color: rgba(238,238,238, 76%);
+    max-width: 146px;
+    height: 697px;
+    max-height: 800px;
+}
+
+a.aside_link {
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: rgba(90,77,77,1);
+    padding: 2px 10px 2px 40px;
+    display: block;
+    text-decoration: none;
+    font-family: Verdana, sans-serif;
+}
+
+a.aside_link:link, a.aside_link:visited {
+    padding: 2px 10px 2px 40px;
+    margin: 0px -20px 0px -11px;
+}
+
+a.aside_link:hover, a.aside_link:active {
+    padding: 2px 10px 2px 40px;
+    color: azure;
+    background-color: rgba(0,21,55,0.39);
+}
