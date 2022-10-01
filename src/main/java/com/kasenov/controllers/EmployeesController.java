@@ -61,11 +61,11 @@ public class EmployeesController {
         employee.setLastName(lastName);
         employee.setSurname(surname);
         employee.setBirthday(birthday.toLocalDate());
+        employee.setSalary(salary);
         employee.setPhoneNumber(phoneNum);
         employee.setDepartment(department);
         employee.setRecruitmentDate(recruitmentDate.toLocalDate());
-        //employeeService.addEmployee(employee);
-        System.out.println(employee.toString());
+        employeeService.addEmployee(employee);
         return "redirect:/workspace/employees";
     }
 }
