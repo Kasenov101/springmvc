@@ -126,4 +126,20 @@ public class Employee {
     public void setRecruitmentDate(LocalDate recruitmentDate) {
         this.recruitmentDate = recruitmentDate;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", iin='" + iin + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", birthday=" + birthday +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                ", recruitmentDate=" + recruitmentDate +
+                '}';
+    }
 }

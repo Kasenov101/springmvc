@@ -1,0 +1,10 @@
+.container{
+    float: left;
+}
+
+
+@media screen {
+    aside, .container {
+
+    }
+}
