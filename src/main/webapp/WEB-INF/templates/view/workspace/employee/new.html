@@ -7,6 +7,7 @@
         <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
         <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
         <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/new_employee.css"/>
     </head>
     <body>
         <div th:replace="~{layouts/notSigndedIn/header :: header}">header</div>
@@ -14,27 +15,44 @@
 
         <div class="container">
             <form action="/workspace/employee/new" method="post" accept-charset="UTF-8">
-                <label for="iin">IIN</label>
-                <input type="text" id="iin" name="iin" placeholder="Employee iin"/>
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="first_name" placeholder="Employee name"/>
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="last_name" placeholder="Employee last name"/>
-                <label for=surname>Surname</label>
-                <input type="text" id="surname" name="surname" placeholder="Employee surname"/>
-                <label for="birthday">Birthday</label>
-                <input type="date" id="birthday" name="birthday" placeholder="pattern"/>
-                <label for="phone_num">Phone number</label>
-                <input type="text" id="phone_num" name="phone_num" placeholder="pattern +7xxxxxxxxxx">
-                <label for="department">Department</label>
-                <input type="text" id="department" name="department" placeholder="Employee department">
-                <label for="salary">Salary</label>
-                <input type="text" id="salary" name="salary" placeholder="Employee salary">
-                <label for="recruitment_date">Recruitment date</label>
-                <input type="date" id="recruitment_date" name="recruitment_date" placeholder="pattern">
-                <input type="submit" value="submit">
+                <div class="row">
+                    <label for="iin">IIN:</label>
+                    <input type="text" id="iin" name="iin" placeholder="Employee iin"/>
+                </div>
+                <div class="row">
+                    <label for="fname">First Name:</label>
+                    <input type="text" id="fname" name="first_name" placeholder="Employee name"/>
+                </div>
+                <div class="row">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" id="lname" name="last_name" placeholder="Employee last name"/>
+                </div>
+                <div class="row">
+                    <label for=surname>Surname:</label>
+                    <input type="text" id="surname" name="surname" placeholder="Employee surname"/>
+                </div>
+                <div class="row">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday" placeholder="pattern"/>
+                </div>
+                <div class="row">
+                    <label for="phone_num">Phone number:</label>
+                    <input type="text" id="phone_num" name="phone_num" placeholder="pattern +7xxxxxxxxxx"/>
+                </div>
+                <div class="row">
+                    <label for="department">Department:</label>
+                    <input type="text" id="department" name="department" placeholder="Employee department"/>
+                </div>
+                <div class="row">
+                    <label for="salary">Salary:</label>
+                    <input type="text" id="salary" name="salary" placeholder="Employee salary"/>
+                </div>
+                <div class="row">
+                    <label for="recruitment_date">Recruitment date:</label>
+                    <input type="date" id="recruitment_date" name="recruitment_date" placeholder="pattern"/>
+                </div>
+                <input type="submit" value="submit"/>
             </form>
         </div>
-
     </body>
 </html>
