@@ -19,7 +19,7 @@ public class EmployeeServiceImpl  implements EmployeeService{
     }
 
     @Override
-    @Transactional
+    @Transactional()
     public void addEmployee(Employee employee) {
         employeeDAO.addEmployee(employee);
     }
