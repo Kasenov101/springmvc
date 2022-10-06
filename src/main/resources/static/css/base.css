@@ -1,0 +1,15 @@
+.aside_menu_links, .top_menu_links, .footer {
+    font-family: Verdana, sans-serif;
+    display: block;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+

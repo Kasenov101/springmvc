@@ -1,14 +1,13 @@
 .aside_menu_links {
-    font-family: Verdana, sans-serif;
+    position: fixed;
     font-size: 14px;
-    float: left;
     border-right: azure;
-    padding: 17px 20px 0px 10px;
-    margin: 0px 0px 0px -8px;
+    padding-top: 20px;
+    width: 170px;
+    min-width: 170px;
+    height: 100%;
+    margin: 0;
     background-color: rgba(238,238,238, 76%);
-    max-width: 146px;
-    height: 697px;
-    max-height: 800px;
 }
 
 a.aside_link {
@@ -18,12 +17,10 @@ a.aside_link {
     padding: 2px 10px 2px 40px;
     display: block;
     text-decoration: none;
-    font-family: Verdana, sans-serif;
 }
 
 a.aside_link:link, a.aside_link:visited {
     padding: 2px 10px 2px 40px;
-    margin: 0px -20px 0px -11px;
 }
 
 a.aside_link:hover, a.aside_link:active {

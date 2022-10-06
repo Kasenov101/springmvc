@@ -4,15 +4,15 @@
     <meta http-equiv="Content-Type" content="text/css" charset="UTF-8"/>
     <meta name="viewport" content="width=device-width initial-scale=1.0"/>
     <title>Info page</title>
-    <link rel="stylesheet" href="/css/info.css"/>
-    <link rel="stylesheet" href="/css/core.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
+    <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
 <body>
-<div class = top_header>
-    <a href="/" methods="get">HR Database</a>
-    <a href="/info" methods="get">About</a>
-</div>
-
-<p>some text</p>
+<div th:replace="~{layouts/notSigndedIn/header :: header}">header</div>
+<div th:replace="~{layouts/notSigndedIn/aside_menu :: aside}">aside</div>
+<div th:replace="~{layouts/footer :: footer}">footer</div>
 
 </body>
 </html>

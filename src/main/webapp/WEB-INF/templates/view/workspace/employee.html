@@ -1,17 +1,20 @@
 <!Doctype html>
-<html lang="ru" xmlns:th="http://thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
         <meta name="viewport" content="width=content-width, initial-scale=1.0"/>
         <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
         <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/base.css"/>
         <link rel="stylesheet" type="text/css" href="/css/employee_view.css"/>
         <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
         <title>Employee's personal information</title>
     </head>
     <body>
         <div th:replace="~{layouts/signedIn/header :: header}">header</div>
-        <aside th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</aside>
+        <div th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</div>
+        <div th:replace="~{layouts/footer :: footer}">footer</div>
             <section class="emp_info_block">
                 <section class="emp_info">
                     <table>
