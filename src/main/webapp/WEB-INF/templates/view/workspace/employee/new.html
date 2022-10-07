@@ -1,17 +1,20 @@
 <!Doctype html>
-<html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
         <meta name="viewport" content="width=content-width, initial-scale=1.0"/>
         <title>add new Employee</title>
-        <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
         <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
         <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
-        <link rel="stylesheet" type="text/css" href="/css/new_employee.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+        <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+        <link rel="stylesheet" type="text/css" href="/css/new_employee.css">
     </head>
     <body>
-        <div th:replace="~{layouts/notSigndedIn/header :: header}">header</div>
-        <aside th:replace="~{layouts/notSigndedIn/aside_menu :: aside_menu}">aside_menu</aside>
+        <div th:replace="~{layouts/signedIn/header :: header}">header</div>
+        <div th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</div>
+        <div th:replace="~{layouts/footer :: footer}">footer</div>
 
         <div class="container">
             <form action="/workspace/employee/new" method="post" accept-charset="UTF-8">
@@ -51,7 +54,7 @@
                     <label for="recruitment_date">Recruitment date:</label>
                     <input type="date" id="recruitment_date" name="recruitment_date" placeholder="pattern"/>
                 </div>
-                <input type="submit" value="submit"/>
+                <input class="submit" type="submit" value="submit"/>
             </form>
         </div>
     </body>

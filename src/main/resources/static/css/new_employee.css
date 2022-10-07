@@ -1,19 +1,29 @@
 .container{
-    float: left;
-    position: relative;
+    position: fixed;
     top: 50px;
-    left: 50px;
-    background-color: gainsboro;
-    border-radius: 4px;
+    left: 200px;
 }
 .row {
     padding: 10px;
 }
 
+label {
 
-@media screen {
-    aside, .container {
-        max-width: 600px;
-        max-height: 600px;
-    }
+}
+
+.submit {
+    border: 2px solid rgb(0 17 48 / 0%);
+    top: 360px;
+    left: 480px;
+    padding: 2px 5px 2px 5px;
+    background-color: rgba(0,17,48,0.51);
+    color: black;
+    border-radius: 3px;
+}
+
+input {
+    position: fixed;
+    left: 356px;
+    border: none;
+    border-bottom: 1px solid green;
 }
