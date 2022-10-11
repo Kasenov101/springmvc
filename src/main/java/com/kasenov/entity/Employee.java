@@ -3,7 +3,10 @@ package com.kasenov.entity;
 
 import javax.persistence.*;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 
 @Entity
@@ -142,5 +145,11 @@ public class Employee {
                 ", salary=" + salary +
                 ", recruitmentDate=" + recruitmentDate +
                 '}';
+    }
+
+    public Date localDateToDate(LocalDate localDate) {
+        return java.util.Date.from(localDate.atStartOfDay()
+                .atZone(ZoneId.systemDefault())
+                .toInstant());
     }
 }

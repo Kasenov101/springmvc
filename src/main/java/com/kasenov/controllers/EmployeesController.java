@@ -47,7 +47,7 @@ public class EmployeesController {
     }
 
     @PostMapping("/employee/new")
-    public String addNewEmployee(Model model, @RequestParam("iin") String iin,
+    public String addNewEmployee(@RequestParam("iin") String iin,
                                  @RequestParam("first_name") String firstName,
                                  @RequestParam("last_name") String lastName, @RequestParam("surname") String surname,
                                  @RequestParam("birthday") Date birthday,
@@ -66,6 +66,19 @@ public class EmployeesController {
         employee.setDepartment(department);
         employee.setRecruitmentDate(recruitmentDate.toLocalDate());
         employeeService.addEmployee(employee);
+        return "redirect:/workspace/employees";
+    }
+
+    @GetMapping("/employee/{id}/edit")
+    public String editEmployeeForm(@PathVariable("id") int id, Model model) {
+        model.addAttribute("employee", employeeService.getEmployee(id));
+        System.out.println("begin");
+        return "/workspace/employee/edit";
+    }
+
+    @PostMapping("/employee/{id}/edit")
+    public String editEmployee(@PathVariable("id") int id, @ModelAttribute("employee") Employee employee) {
+        employeeService.updateEmployee(employee,id);
         return "redirect:/workspace/employees";
     }
 }

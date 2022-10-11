@@ -1,0 +1,61 @@
+<!Doctype html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+    <meta name="viewport" content="width=content-width, initial-scale=1.0"/>
+    <title>edit Employee info</title>
+    <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/base.css"/>
+    <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/new_employee.css">
+</head>
+<body>
+    <div th:replace="~{layouts/signedIn/header :: header}">header</div>
+    <div th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</div>
+    <div th:replace="~{layouts/footer :: footer}">footer</div>
+<div class="container">
+    <form th:action="@{/workspace/employee/{id}/edit (id=${employee.getId()})}" th:method="patch"
+          th:object="${employee}" accept-charset="UTF-8">
+        <div class="row">
+            <label for="iin">IIN:</label>
+            <input type="text" id="iin" th:field="*{iin}" placeholder="Employee iin"/>
+        </div>
+        <div class="row">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" th:field="*{firstName}" placeholder="Employee name"/>
+        </div>
+        <div class="row">
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" th:field="*{lastName}" placeholder="Employee last name"/>
+        </div>
+        <div class="row">
+            <label for=surname>Surname:</label>
+            <input type="text" id="surname" th:field="*{surname}" placeholder="Employee surname"/>
+        </div>
+        <div class="row">
+            <label for="birthday">Birthday:</label>
+            <input type="text" id="birthday" th:field="*{birthday}" placeholder="pattern"/>
+        </div>
+        <div class="row">
+            <label for="phone_num">Phone number:</label>
+            <input type="text" id="phone_num" th:field="*{phoneNumber}" placeholder="pattern +7xxxxxxxxxx"/>
+        </div>
+        <div class="row">
+            <label for="department">Department:</label>
+            <input type="text" id="department" th:field="*{department}" placeholder="Employee department"/>
+        </div>
+        <div class="row">
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" th:field="*{salary}" placeholder="Employee salary"/>
+        </div>
+        <div class="row">
+            <label for="recruitment_date">Recruitment date:</label>
+            <input type="text" id="recruitment_date" th:field="*{recruitmentDate}" placeholder="pattern"/>
+        </div>
+        <input class="submit" type="submit" value="submit"/>
+    </form>
+</div>
+</body>
+</html>
