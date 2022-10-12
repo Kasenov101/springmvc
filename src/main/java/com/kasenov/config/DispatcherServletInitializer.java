@@ -1,6 +1,7 @@
 package com.kasenov.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -31,6 +32,8 @@ public class DispatcherServletInitializer extends AbstractAnnotationConfigDispat
         filterRegistration.setInitParameter("encoding","UTF-8");
         filterRegistration.setInitParameter("forceEncoding", "true");
         filterRegistration.addMappingForUrlPatterns(null,false,"/*");
+        servletContext.addFilter("hiddenHttpMethod", new HiddenHttpMethodFilter())
+                .addMappingForUrlPatterns(null, true, "/*");
         super.onStartup(servletContext);
     }
 }

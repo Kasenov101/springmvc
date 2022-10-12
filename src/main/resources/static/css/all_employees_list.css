@@ -35,3 +35,12 @@ aside, section {
     height: 697px;
 }
 }
+
+#emp_del_button {
+    padding: 0;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: black 2px solid;
+}

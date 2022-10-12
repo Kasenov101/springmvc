@@ -5,11 +5,14 @@ import com.kasenov.entity.Employee;
 import com.kasenov.services.EmployeeService;
 import com.kasenov.services.EmployeeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -72,13 +75,17 @@ public class EmployeesController {
     @GetMapping("/employee/{id}/edit")
     public String editEmployeeForm(@PathVariable("id") int id, Model model) {
         model.addAttribute("employee", employeeService.getEmployee(id));
-        System.out.println("begin");
         return "/workspace/employee/edit";
     }
 
-    @PostMapping("/employee/{id}/edit")
+    @PatchMapping("/employee/{id}/edit")
     public String editEmployee(@PathVariable("id") int id, @ModelAttribute("employee") Employee employee) {
         employeeService.updateEmployee(employee,id);
+        return "redirect:/workspace/employee/{id}";
+    }
+    @DeleteMapping("/employee/delete/{id}")
+    public String deleteEmployee(@PathVariable("id") int id) {
+        employeeService.deleteEmployee(id);
         return "redirect:/workspace/employees";
     }
 }
