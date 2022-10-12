@@ -1,3 +1,4 @@
+<!--edit employee personal info-->
 <!Doctype html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,14 +9,16 @@
     <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
     <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="/css/base.css"/>
-    <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+    <link rel="icon" type="image/x-icon" href="/img/db.png"/>
     <link rel="stylesheet" type="text/css" href="/css/new_employee.css">
 </head>
 <body>
+<!--using Thymeleaf was replaced div elements to layouts-->
     <div th:replace="~{layouts/signedIn/header :: header}">header</div>
     <div th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</div>
     <div th:replace="~{layouts/footer :: footer}">footer</div>
 <div class="container">
+    <!-- Thymeleaf takes employee object from model and fills input rows-->
     <form th:action="@{/workspace/employee/{id}/edit (id=${employee.getId()})}" th:method="patch"
           th:object="${employee}" accept-charset="UTF-8">
         <div class="row">

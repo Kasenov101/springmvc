@@ -43,7 +43,6 @@ public class HibernateConfig {
 
     @Bean
     public DataSource getDataSource() {
-        //ComboPooledDataSource dataSource = new ComboPooledDataSource();
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("connection.driver_class"));
         dataSource.setUrl(environment.getRequiredProperty("connection.url"));

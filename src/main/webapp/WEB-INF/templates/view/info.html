@@ -1,3 +1,4 @@
+<!--Info page-->
 <!DOCTYPE html>
 <html lang="ru" xmlns:th="thymeleaf.org">
 <head>
@@ -6,13 +7,13 @@
     <title>Info page</title>
     <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
     <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
-    <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+    <link rel="icon" type="image/x-icon" href="/img/db.png"/>
     <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
     <link rel="stylesheet" type="text/css" href="/css/base.css"/>
 <body>
+<!--using Thymeleaf was replaced div elements to layouts-->
 <div th:replace="~{layouts/notSigndedIn/header :: header}">header</div>
 <div th:replace="~{layouts/notSigndedIn/aside_menu :: aside}">aside</div>
 <div th:replace="~{layouts/footer :: footer}">footer</div>
-
 </body>
 </html>

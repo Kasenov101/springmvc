@@ -1,3 +1,4 @@
+<!--page shows all employees from database /workspace/employees-->
 <!Doctype html>
 <html lang="ru" xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -6,12 +7,13 @@
         <title>HR Workspace</title>
         <link rel="stylesheet" type="text/css" href="/css/aside_menu.css"/>
         <link rel="stylesheet" type="text/css" href="/css/top_menu.css"/>
-        <link rel="icon" type="image/x-icon" href="/img/db_icon.png"/>
+        <link rel="icon" type="image/x-icon"   href="/img/db.png"/>
         <link rel="stylesheet" type="text/css" href="/css/footer.css"/>
         <link rel="stylesheet" type="text/css" href="/css/base.css"/>
         <link rel="stylesheet" type="text/css" href="/css/all_employees_list.css"/>
     </head>
     <body>
+    <!--using Thymeleaf was replaced div elements to layouts-->
         <div th:replace="~{layouts/signedIn/header :: header}">header</div>
         <div th:replace="~{layouts/signedIn/aside_menu :: aside}">aside</div>
         <div th:replace="~{layouts/footer :: footer}">footer</div>
@@ -25,20 +27,24 @@
                     <th>Department</th>
                     <th colspan="4" style="text-align: center">Profile</th>
                 </tr>
+                <!--Thymeleaf iterates employee objects, get the field values and insert them into cells-->
                     <tr th:each="employee : ${employees}">
                         <td th:text="${employee.getIin()}">iin</td>
                         <td th:text="${employee.getFirstName()}">first name</td>
                         <td th:text="${employee.getLastName()}">last name</td>
                         <td th:text="${employee.getSurname()}">surname</td>
                         <td th:text="${employee.getDepartment()}">department</td>
+                        <!--link to employee get by Id (shows employee personal info)-->
                         <td><a th:href="@{/workspace/employee/{id}(id=${employee.getId()})}">
                             <img src="/img/profile_icon.png" style="width: 20px; height: 20px" alt="profile icon"
                             title="profile"/></a>
                         </td>
+                        <!--link to set employee personal data (shows employee edit page)-->
                         <td><a th:href="@{/workspace/employee/{id}/edit (id=${employee.getId()})}">
                             <img src="/img/edit_icon.png" style="height: 20px; width: 20px" alt="edit icon"
                                  title="edit"/></a>
                         </td>
+                        <!--perform delete employee from database (needs to be refactored(confirm deletion))-->
                         <td><form th:action="@{/workspace/employee/delete/{id} (id=${employee.getId()})}" th:method="delete">
                             <input id="emp_del_button" th:type="submit" th:value="X">
                             </input>
